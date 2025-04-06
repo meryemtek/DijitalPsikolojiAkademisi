@@ -3,5 +3,6 @@ export default{
     LİGHT_PRİMARY:'#C2BAFF',
     WHİTE:'#fff',
     BLACK:'#000',
-    GREEN: '#63a8a5'
+    GREEN: '#63a8a5',
+    BLUE: "#81c0db"
 }

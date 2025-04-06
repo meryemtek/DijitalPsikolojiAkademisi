@@ -2,6 +2,11 @@ import { StatusBar } from "expo-status-bar";
 import { StyleSheet, View, Text } from "react-native";
 import { useFonts } from 'expo-font';
 import LoginScreen from "./App/Screen/LoginScreen";
+//import { ClerkProvider } from "@clerk/clerk-expo";
+import { ClerkProvider, SignedIn , SignedOut} from '@clerk/clerk-expo';
+import { NavigationContainer } from "@react-navigation/native";
+import TabNavigation from "./App/Navigations/TabNavigation";
+
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -13,9 +18,19 @@ export default function App() {
   });
   
   return (
+    <ClerkProvider publishableKey={"pk_test_Y2VydGFpbi1mZXJyZXQtMjIuY2xlcmsuYWNjb3VudHMuZGV2JA"}>
     <View style={styles.container}>
-     <LoginScreen/>
+    
+    <SignedIn>
+      <NavigationContainer>
+         <TabNavigation/>
+      </NavigationContainer>
+    </SignedIn>
+    <SignedOut>
+      <LoginScreen/>
+    </SignedOut>
     </View>
+    </ClerkProvider>
   );
 }
 
@@ -23,6 +38,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#fff",
+    marginTop:20
    
   },
 });
