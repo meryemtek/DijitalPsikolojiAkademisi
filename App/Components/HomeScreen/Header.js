@@ -4,6 +4,7 @@ import { useUser } from '@clerk/clerk-expo';
 import Color from '../../Utils/Color';
 import Star from '../../../assets/images/star.png';
 import { StyleSheet } from 'react-native';
+import Ionicons from '@expo/vector-icons/Ionicons';
 
 
 
@@ -26,8 +27,15 @@ export default function Header() {
         <Text style={{ marginLeft:4,marginBottom:8,fontFamily:"Outfit-Bold"}}>3500</Text>
       </View>
     </View>
-    <View>
-     <TextInput placeholder='Search'/>
+
+  <View style={{backgroundColor:Color.WHİTE,paddingLeft:20,
+    paddingRight:5,marginTop:25,
+    borderRadius:99,
+    display:"flex",flexDirection:"row",justifyContent:"space-between"
+    }}>
+     <TextInput placeholder='Kurs Ara' 
+     style={{fontFamily:'outfit',fontSize:18}}/>
+     <Ionicons name="search-circle" size={50} color={Color.BLUE} />
     </View>
   </View>
   )

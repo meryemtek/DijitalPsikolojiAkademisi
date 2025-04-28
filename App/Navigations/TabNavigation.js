@@ -40,7 +40,7 @@ export default function TabNavigation() {
         }}
       />
       <Tab.Screen
-        name="profil"
+        name="Profil"
         component={ProfileScreen}
         options={{
           tabBarIcon: ({ color, size }) =>
