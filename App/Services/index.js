@@ -2,10 +2,10 @@ import { gql, request } from 'graphql-request'
 
 const MASTER_URL = "https://us-west-2.cdn.hygraph.com/content/cm9w7fnub00bt07usnzomce2e/master"
 
-export const getCourseList = async (level) => {
+export const getCourseList = async () => {
   const query = gql`
-    query CourseList($level: CourseLevel!) {
-      courses(where: { level: $level }) {
+    query CourseList {
+      courses {
         id
         name
         price
@@ -20,10 +20,8 @@ export const getCourseList = async (level) => {
         }
       }
     }
-  `
+  `;
 
-  const variables = { level };
-
-  const result = await request(MASTER_URL, query, variables);
+  const result = await request(MASTER_URL, query);
   return result;
-}
+};
