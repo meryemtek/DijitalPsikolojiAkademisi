@@ -1,13 +1,13 @@
 import { View, Text } from 'react-native';
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import HomeScreen from '../Screen/HomeScreen';
 import MyCourse from '../Screen/MyCourse';
 import ProfileScreen from '../Screen/ProfileScreen';
 import LeaderBoard from '../Screen/LeaderBoard';
-import { Ionicons } from '@expo/vector-icons'; // Düzeltilmiş
+import { Ionicons } from '@expo/vector-icons';
 import { MaterialIcons } from '@expo/vector-icons';
 import FontAwesome5 from '@expo/vector-icons/FontAwesome5';
+import HomeScreenNavigation from './HomeScreenNavigation';
 
 const Tab = createBottomTabNavigator();
 
@@ -20,7 +20,7 @@ export default function TabNavigation() {
     >
       <Tab.Screen
         name="Anasayfa"
-        component={HomeScreen}
+        component={HomeScreenNavigation}
         options={{
           tabBarIcon: ({ color, size }) => <Ionicons name="home" size={size} color={color} />,
         }}

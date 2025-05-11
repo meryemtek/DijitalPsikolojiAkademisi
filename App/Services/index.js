@@ -9,6 +9,7 @@ export const getCourseList = async () => {
         id
         name
         price
+        level
         tags
         time
         author
